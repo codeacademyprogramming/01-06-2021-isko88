@@ -9,7 +9,7 @@ import TempTypes from './TempTypes';
 export default function Form() {
 
     const dispatch = useDispatch();
-    const datalist = useSelector(state => state.weather);
+    const datalist = useSelector((state:any) => state.weather);
     const [tmp, setTmp] = useState("K")
     const handleEnter = React.useCallback((evt) => {
         if (evt.key === "Enter") {
@@ -33,7 +33,7 @@ export default function Form() {
                     </FormControl>
                     <Box display="flex" justifyContent="center">
                         <List component="nav" aria-label="cities">
-                            {datalist.status ? datalist.data.map((d, idx) =>
+                            {datalist.status ? datalist.data.map((d:any, idx:number) =>
                             (<ListItem key={d.coord.lon} button >
                                 <ListItemIcon onClick={() => handleDeleteListItem(d, idx)}>
                                     <DeleteIcon />
