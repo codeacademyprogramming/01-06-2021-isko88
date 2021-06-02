@@ -1,7 +1,7 @@
 import { FormControlLabel, Radio, RadioGroup } from '@material-ui/core'
 import React, { FormEvent, useState } from 'react'
 
-export default function TempTypes({setTmp}:any) {
+export default function TempTypes({ setTmp }: any) {
     const [selectRadio, setSelectRadio] = useState("Kelvin");
     const handleChangeTemp = React.useCallback((evt) => {
         setSelectRadio(evt.target.value)
@@ -21,7 +21,7 @@ export default function TempTypes({setTmp}:any) {
         }
     }, [setTmp])
     return (
-        <RadioGroup aria-label="Temps" name="Temps" onChange={(evt:FormEvent) => handleChangeTemp(evt)} value={selectRadio} >
+        <RadioGroup aria-label="Temps" name="Temps" onChange={(evt: FormEvent) => handleChangeTemp(evt)} value={selectRadio} >
             <FormControlLabel aria-selected="true" value="Kelvin" control={<Radio />} label="Kelvin" />
             <FormControlLabel value="Celcius" control={<Radio />} label="Celcius" />
             <FormControlLabel value="Fehrenheight" control={<Radio />} label="Fehrenheight" />
