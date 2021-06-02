@@ -1,7 +1,7 @@
 import { FormControlLabel, Radio, RadioGroup } from '@material-ui/core'
 import React, { FormEvent, useState } from 'react'
 
-export default function TempTypes({ setTemp ,setTmp}) {
+export default function TempTypes({setTmp}:any) {
     const [selectRadio, setSelectRadio] = useState("Kelvin");
     const handleChangeTemp = React.useCallback((evt) => {
         setSelectRadio(evt.target.value)
