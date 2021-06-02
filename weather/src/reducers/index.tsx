@@ -4,11 +4,11 @@ const INITIAL_STATE = {
     status: false,
     data: []
 }
-export function weatherReducer(state = INITIAL_STATE, action:any) {
+export function weatherReducer(state = INITIAL_STATE, action: any) {
 
     switch (action.type) {
         case WEATHER.GET_WEATHER_BY_CITY:
-            const newData:any = [...state.data];
+            const newData: any = [...state.data];
             newData.push(action.payload)
             return {
                 ...state,
@@ -24,15 +24,15 @@ export function weatherReducer(state = INITIAL_STATE, action:any) {
                 status: true
             }
         case `${WEATHER.CHANGE_TO}_CELCIUS`:
-            
+
             const newData2 = [...state.data];
-           
-       
-            const newData3  = newData2.map((d : any) => {
-                d.main.temp = d.main.temp*2;
+
+
+            const newData3 = newData2.map((d: any) => {
+                d.main.temp = d.main.temp * 2;
                 return d;
             });
-                
+
             return {
                 ...state,
                 data: newData3,
